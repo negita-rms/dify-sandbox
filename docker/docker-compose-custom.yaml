@@ -1,5 +1,5 @@
-# include:
-#   - ./docker-compose.yaml
+include:
+  - ./docker-compose.yaml
 
 services:
   ollama:
@@ -7,5 +7,7 @@ services:
     image: ollama/ollama:0.5.7
     ports:
       - "11434:11434"
+    expose:
+      - "11434" # 他のコンテナから接続するため
     volumes:
       - ./volumes/ollama:/root/.ollama
