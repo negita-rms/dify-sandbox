@@ -4,7 +4,10 @@ include:
 services:
   ollama:
     container_name: ollama-api
-    image: ollama/ollama:0.5.7
+    build:
+      context: ./ollama
+      dockerfile: Dockerfile
+    # image: ollama/ollama:0.5.7
     ports:
       - "11434:11434"
     expose:
