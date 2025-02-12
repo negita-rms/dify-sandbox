@@ -1,0 +1,11 @@
+# include:
+#   - ./docker-compose.yaml
+
+services:
+  ollama:
+    container_name: ollama-api
+    image: ollama/ollama:0.5.7
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./volumes/ollama:/root/.ollama
